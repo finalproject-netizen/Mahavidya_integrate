@@ -158,3 +158,53 @@ button:hover {
     width: 80px;
   }
 }
+/* === ANIMASI MASUK (FADE-IN + SLIDE) === */
+
+.dashboard-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.dashboard-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === ANIMASI TEKS & ICON DALAM SECTION === */
+.dashboard-section h1,
+.dashboard-section h2,
+.dashboard-section p,
+.dashboard-section button,
+.dashboard-section .icon {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.dashboard-section.visible h1,
+.dashboard-section.visible h2,
+.dashboard-section.visible p,
+.dashboard-section.visible button,
+.dashboard-section.visible .icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Urutan delay biar animasi lebih alami */
+.dashboard-section.visible h1 { transition-delay: 0.1s; }
+.dashboard-section.visible h2 { transition-delay: 0.2s; }
+.dashboard-section.visible .icon { transition-delay: 0.3s; }
+.dashboard-section.visible p { transition-delay: 0.4s; }
+.dashboard-section.visible button { transition-delay: 0.5s; }
+
+/* Efek halus saat hilang */
+.dashboard-section:not(.visible) {
+  transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+}
+
+/* Tambahan: hover efek icon */
+.icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
