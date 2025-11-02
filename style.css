@@ -1,304 +1,225 @@
-/* === IMPORT FONT === */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Titillium+Web:wght@300;400;600&display=swap');
+/* === GLOBAL STYLE: MAHAVIDYA DASHBOARD === */
 
-/* === RESET & BASE === */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  background-color: #000000;
-  color: #FFFFFF;
+  background-color: #000;
+  color: #fff;
   font-family: 'Titillium Web', sans-serif;
-  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* === HEADING STYLE === */
-h1, h2, h3, h4 {
+/* === HEADER UTAMA === */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+header h1 {
   font-family: 'Merriweather', serif;
-  color: #FFFFFF;
+  font-size: 42px;
+  margin: 0;
   letter-spacing: 1px;
 }
 
-/* === SECTION LAYOUT === */
+header h2 {
+  font-weight: normal;
+  font-size: 20px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* === SECTION DASHBOARD === */
 .dashboard-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  padding: 80px 20px;
   text-align: center;
-  padding: 4rem 2rem;
-  border-bottom: 1px solid #450000;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-top: 1px solid rgba(69, 0, 0, 0.3);
+  transition: background 0.5s ease;
 }
 
-.dashboard-section:hover {
-  background-color: #2A0001;
-  transform: scale(1.01);
+.dashboard-section:nth-child(odd) {
+  background: #000;
 }
 
-/* === TEXT PARAGRAPH === */
+.dashboard-section:nth-child(even) {
+  background: #0a0a0a;
+}
+
+.dashboard-section h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
 .dashboard-section p {
-  max-width: 600px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 1rem 0 2rem;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.7;
 }
 
-/* === BUTTON STYLE === */
-button {
-  background-color: #450000;
-  color: #FFFFFF;
-  border: 5px solid #450000;
+/* === ICON STYLE === */
+.icon {
+  width: 80px;
+  height: 80px;
+  opacity: 0.2;
+  margin: 15px auto;
+  display: block;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.dashboard-section.visible .icon {
+  opacity: 1;
+}
+
+/* === BUTTON === */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 3px solid #450000;
+  color: #fff;
+  text-decoration: none;
   border-radius: 10px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
+  font-weight: bold;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-  background-color: #2A0001;
+.btn:hover {
+  background: #2A0001;
   border-color: #2A0001;
   transform: translateY(-3px);
+}
+
+/* === FADE-IN PER SECTION === */
+.dashboard-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.dashboard-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === ANIMASI TEKS & ICON === */
+.dashboard-section h2,
+.dashboard-section p,
+.dashboard-section .btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.dashboard-section.visible h2,
+.dashboard-section.visible p,
+.dashboard-section.visible .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay animasi agar muncul berurutan */
+.dashboard-section.visible h2 { transition-delay: 0.1s; }
+.dashboard-section.visible p { transition-delay: 0.2s; }
+.dashboard-section.visible .btn { transition-delay: 0.3s; }
+.dashboard-section.visible .icon { transition-delay: 0.15s; }
+
+/* === POSISI ICON KHUSUS PER SECTION === */
+
+/* 1 - Judul: Icon di belakang teks, besar, transparan */
+.section-1 .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  z-index: 0;
+}
+.section-1 h1, .section-1 h2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* 2 - Kemitraan: icon di kiri, teks di kanan */
+.section-2 .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.section-2 .icon {
+  width: 80px;
+  height: 80px;
+  opacity: 0.8;
+}
+
+/* 3 - Database: icon di antara judul dan teks */
+.section-3 .icon {
+  margin: 10px auto 20px;
+}
+
+/* 4 - Ekosistem: icon setelah teks */
+.section-4 .icon {
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* 5 - Motaverse: icon di kiri, teks di kanan */
+.section-5 .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.section-5 .icon {
+  width: 80px;
+  height: 80px;
+}
+
+/* 6 - Eksperimen: teks di kiri, icon di kanan */
+.section-6 .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  gap: 20px;
+}
+
+/* 7 - Prototype: icon sebelum teks */
+.section-7 .icon {
+  margin: 0 auto 15px;
+}
+
+/* 8 - Dukungan & Whitepaper: icon di antara judul dan teks */
+.section-8 .icon {
+  margin: 15px auto 20px;
+}
+
+/* 9 - Mahavidya: teks kiri, icon kanan */
+.section-9 .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  gap: 20px;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .dashboard-section {
-    padding: 3rem 1.5rem;
+    padding: 60px 20px;
   }
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.4rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
-/* === ICON LAYOUT STYLES === */
-
-/* 1️⃣ Icon di belakang teks (judul) */
-.icon-behind {
-  position: relative;
-  overflow: hidden;
-}
-.icon-behind .icon-bg {
-  position: absolute;
-  width: 50%;
-  opacity: 0.2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-.icon-behind h1 {
-  position: relative;
-  z-index: 1;
-}
-
-/* 2️⃣ Icon sejajar di kiri teks */
-.icon-left .icon-text-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-.icon-left .icon {
-  width: 100px;
-  height: auto;
-}
-
-/* 3️⃣ Icon sejajar di kanan teks */
-.icon-right .icon-text-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-.icon-right .icon {
-  width: 100px;
-  height: auto;
-}
-
-/* 4️⃣ Icon di antara judul dan isi */
-.icon-middle .icon {
-  width: 120px;
-  height: auto;
-  margin: 1rem 0;
-}
-
-/* 5️⃣ Icon setelah teks */
-.icon-after .icon {
-  width: 100px;
-  height: auto;
-  margin-top: 1rem;
-}
-
-/* 6️⃣ Icon sebelum teks */
-.icon-before .icon {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-  .icon-left .icon-text-row,
-  .icon-right .icon-text-row {
-    flex-direction: column;
+  header h1 {
+    font-size: 32px;
   }
   .icon {
-    width: 80px;
+    width: 60px;
+    height: 60px;
   }
-}
-/* === ANIMASI MASUK (FADE-IN + SLIDE) === */
-
-.dashboard-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.dashboard-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === ANIMASI TEKS & ICON DALAM SECTION === */
-.dashboard-section h1,
-.dashboard-section h2,
-.dashboard-section p,
-.dashboard-section button,
-.dashboard-section .icon {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.dashboard-section.visible h1,
-.dashboard-section.visible h2,
-.dashboard-section.visible p,
-.dashboard-section.visible button,
-.dashboard-section.visible .icon {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Urutan delay biar animasi lebih alami */
-.dashboard-section.visible h1 { transition-delay: 0.1s; }
-.dashboard-section.visible h2 { transition-delay: 0.2s; }
-.dashboard-section.visible .icon { transition-delay: 0.3s; }
-.dashboard-section.visible p { transition-delay: 0.4s; }
-.dashboard-section.visible button { transition-delay: 0.5s; }
-
-/* Efek halus saat hilang */
-.dashboard-section:not(.visible) {
-  transition: opacity 0.6s ease-in, transform 0.6s ease-in;
-}
-
-/* Tambahan: hover efek icon */
-.icon:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease-in-out;
-}
-/* === ANIMASI MASUK UMUM === */
-.dashboard-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.dashboard-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === VARIASI ARAH ANIMASI === */
-.fade-left { transform: translateX(-60px); }
-.fade-right { transform: translateX(60px); }
-.fade-up { transform: translateY(60px); }
-.fade-center { transform: scale(0.95); }
-
-.fade-left.visible,
-.fade-right.visible,
-.fade-up.visible,
-.fade-center.visible {
-  transform: translateX(0) translateY(0) scale(1);
-}
-
-/* === ICON ANIMASI KHUSUS === */
-.dashboard-section .icon {
-  opacity: 0;
-  transition: all 1s ease;
-}
-.dashboard-section.visible .icon {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* === MODAL KEMITRAAN === */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: #1a1a1a;
-  border: 5px solid #450000;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 800px;
-  padding: 2rem;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  animation: popIn 0.6s ease forwards;
-}
-
-@keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.modal-content iframe {
-  width: 100%;
-  height: 400px;
-  margin: 1rem 0;
-  border: none;
-}
-
-.modal-content button {
-  background-color: #450000;
-  border: 5px solid #450000;
-  color: #fff;
-  border-radius: 10px;
-  padding: 0.7rem 1.5rem;
-  cursor: pointer;
-}
-
-.modal-content button:hover {
-  background-color: #2A0001;
-  border-color: #2A0001;
-}
-
-.close {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
 }
