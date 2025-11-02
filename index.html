@@ -1,103 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | Mahavidya</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahavidya Dashboard</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Style -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- SECTION 1: Judul -->
-  <section id="section1" class="dashboard-section icon-behind fade-center">
-    <img src="assets/icons/icon-judul.svg" alt="Icon Judul" class="icon-bg">
-    <h1>Thaha, Mahavidya</h1>
+  <!-- === SECTION 1: JUDUL === -->
+  <section class="dashboard-section section-1">
+    <img src="assets/icons/title-icon.png" alt="Judul Icon" class="icon">
+    <header>
+      <h1>Mahavidya</h1>
+      <h2>Platform Eksperimen dan Inovasi Digital</h2>
+    </header>
   </section>
 
-  <!-- SECTION 2: Kemitraan -->
-  <section id="section2" class="dashboard-section icon-left fade-left">
-    <div class="icon-text-row">
-      <img src="assets/icons/icon-kemitraan.svg" alt="Icon Kemitraan" class="icon">
+  <!-- === SECTION 2: KEMITRAAN === -->
+  <section class="dashboard-section section-2">
+    <div class="content">
+      <img src="assets/icons/kemitraan-icon.png" alt="Kemitraan Icon" class="icon">
       <div>
         <h2>Kemitraan</h2>
-        <p>sit dolor amer</p>
-        <button id="openModal">Lihat Kemitraan</button>
+        <p>
+          Kolaborasi dengan lembaga dan individu untuk menciptakan ekosistem pengetahuan terbuka.
+          Pelajari lebih lanjut tentang perjanjian dan syarat kemitraan kami.
+        </p>
+        <button class="btn" id="openKemitraanPopup">Lihat Detail & Daftar</button>
       </div>
     </div>
   </section>
 
-  <!-- Modal PDF Kemitraan -->
-  <div id="kemitraanModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h3>Perjanjian & Persetujuan Kemitraan</h3>
-      <iframe src="assets/docs/kemitraan.pdf" title="PDF Kemitraan"></iframe>
-      <a href="daftar-kemitraan.html" class="btn">Daftar Sekarang</a>
+  <!-- Popup Kemitraan -->
+  <div id="kemitraanPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>Perjanjian & Persetujuan Kemitraan</h2>
+      <iframe src="assets/docs/perjanjian.pdf" frameborder="0"></iframe>
+      <a href="kemitraan-form.html" class="btn">Daftar Sekarang</a>
     </div>
   </div>
 
-  <!-- SECTION 3–9 -->
-  <section id="section3" class="dashboard-section icon-middle fade-up">
+  <!-- === SECTION 3: DATABASE === -->
+  <section class="dashboard-section section-3">
     <h2>Database</h2>
-    <img src="assets/icons/icon-database.svg" alt="Icon Database" class="icon">
-    <p>sit dolor amer</p>
-    <button onclick="window.location.href='database.html'">Lihat Database</button>
+    <img src="assets/icons/database-icon.png" alt="Database Icon" class="icon">
+    <p>Kumpulan data dan riset yang menjadi dasar pengembangan inovasi Mahavidya.</p>
   </section>
 
-  <section id="section4" class="dashboard-section icon-after fade-up">
+  <!-- === SECTION 4: EKOSISTEM === -->
+  <section class="dashboard-section section-4">
     <h2>Ekosistem</h2>
-    <p>sit dolor amer</p>
-    <img src="assets/icons/icon-ekosistem.svg" alt="Icon Ekosistem" class="icon">
-    <button onclick="window.location.href='komunitas.html'">Lihat Ekosistem</button>
+    <p>Jaringan lembaga, akademisi, dan komunitas digital yang saling terhubung untuk kolaborasi.</p>
+    <img src="assets/icons/ekosistem-icon.png" alt="Ekosistem Icon" class="icon">
   </section>
 
-  <section id="section5" class="dashboard-section icon-left fade-left">
-    <div class="icon-text-row">
-      <img src="assets/icons/icon-motaverse.svg" alt="Icon Motaverse" class="icon">
+  <!-- === SECTION 5: MOTAVERSE === -->
+  <section class="dashboard-section section-5">
+    <div class="content">
+      <img src="assets/icons/motaverse-icon.png" alt="Motaverse Icon" class="icon">
       <div>
         <h2>Motaverse</h2>
-        <p>sit dolor amer</p>
-        <button onclick="window.location.href='motaverse.html'">Lihat Motaverse</button>
+        <p>Ruang metaverse interaktif untuk simulasi pembelajaran, eksperimen sosial, dan pelatihan digital.</p>
       </div>
     </div>
   </section>
 
-  <section id="section6" class="dashboard-section icon-right fade-right">
-    <div class="icon-text-row">
+  <!-- === SECTION 6: EKSPERIMEN === -->
+  <section class="dashboard-section section-6">
+    <div class="content">
       <div>
         <h2>Eksperimen</h2>
-        <p>sit dolor amer</p>
-        <button onclick="window.location.href='eksperimen.html'">Lihat Eksperimen</button>
+        <p>Wadah pengujian konsep digital, algoritma, dan desain berbasis teknologi terbuka.</p>
       </div>
-      <img src="assets/icons/icon-eksperimen.svg" alt="Icon Eksperimen" class="icon">
+      <img src="assets/icons/eksperimen-icon.png" alt="Eksperimen Icon" class="icon">
     </div>
   </section>
 
-  <section id="section7" class="dashboard-section icon-before fade-up">
+  <!-- === SECTION 7: PROTOTYPE === -->
+  <section class="dashboard-section section-7">
+    <img src="assets/icons/prototype-icon.png" alt="Prototype Icon" class="icon">
     <h2>Prototype</h2>
-    <img src="assets/icons/icon-prototype.svg" alt="Icon Prototype" class="icon">
-    <p>sit dolor amer</p>
-    <button onclick="window.location.href='prototype.html'">Lihat Prototype</button>
+    <p>Pengembangan purwarupa aplikasi dan sistem yang siap diuji lapangan.</p>
   </section>
 
-  <section id="section8" class="dashboard-section icon-middle fade-up">
+  <!-- === SECTION 8: DUKUNGAN & WHITEPAPER === -->
+  <section class="dashboard-section section-8">
     <h2>Dukungan & Whitepaper</h2>
-    <img src="assets/icons/icon-dukungan.svg" alt="Icon Dukungan" class="icon">
-    <p>sit dolor amer</p>
-    <button onclick="window.location.href='whitepaper.html'">Lihat Detail</button>
+    <img src="assets/icons/whitepaper-icon.png" alt="Whitepaper Icon" class="icon">
+    <p>Temukan panduan, dokumen pendukung, dan roadmap Mahavidya.</p>
+    <a href="assets/docs/whitepaper.pdf" class="btn" target="_blank">Buka Whitepaper</a>
   </section>
 
-  <section id="section9" class="dashboard-section icon-right fade-right">
-    <div class="icon-text-row">
+  <!-- === SECTION 9: MAHAVIDYA === -->
+  <section class="dashboard-section section-9">
+    <div class="content">
       <div>
         <h2>Mahavidya</h2>
-        <p>sit dolor amer</p>
-        <button onclick="window.location.href='mahavidya.html'">Lihat Mahavidya</button>
+        <p>Pusat inovasi digital dan kolaborasi teknologi yang membentuk masa depan pembelajaran.</p>
       </div>
-      <img src="assets/icons/icon-mahavidya.svg" alt="Icon Mahavidya" class="icon">
+      <img src="assets/icons/mahavidya-icon.png" alt="Mahavidya Icon" class="icon">
     </div>
   </section>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
