@@ -82,3 +82,79 @@ button:hover {
     font-size: 1rem;
   }
 }
+/* === ICON LAYOUT STYLES === */
+
+/* 1️⃣ Icon di belakang teks (judul) */
+.icon-behind {
+  position: relative;
+  overflow: hidden;
+}
+.icon-behind .icon-bg {
+  position: absolute;
+  width: 50%;
+  opacity: 0.2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+.icon-behind h1 {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2️⃣ Icon sejajar di kiri teks */
+.icon-left .icon-text-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.icon-left .icon {
+  width: 100px;
+  height: auto;
+}
+
+/* 3️⃣ Icon sejajar di kanan teks */
+.icon-right .icon-text-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.icon-right .icon {
+  width: 100px;
+  height: auto;
+}
+
+/* 4️⃣ Icon di antara judul dan isi */
+.icon-middle .icon {
+  width: 120px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+/* 5️⃣ Icon setelah teks */
+.icon-after .icon {
+  width: 100px;
+  height: auto;
+  margin-top: 1rem;
+}
+
+/* 6️⃣ Icon sebelum teks */
+.icon-before .icon {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .icon-left .icon-text-row,
+  .icon-right .icon-text-row {
+    flex-direction: column;
+  }
+  .icon {
+    width: 80px;
+  }
+}
