@@ -1,0 +1,84 @@
+/* === IMPORT FONT === */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Titillium+Web:wght@300;400;600&display=swap');
+
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Titillium Web', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* === HEADING STYLE === */
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+/* === SECTION LAYOUT === */
+.dashboard-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #450000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-section:hover {
+  background-color: #2A0001;
+  transform: scale(1.01);
+}
+
+/* === TEXT PARAGRAPH === */
+.dashboard-section p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem 0 2rem;
+}
+
+/* === BUTTON STYLE === */
+button {
+  background-color: #450000;
+  color: #FFFFFF;
+  border: 5px solid #450000;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #2A0001;
+  border-color: #2A0001;
+  transform: translateY(-3px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .dashboard-section {
+    padding: 3rem 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
