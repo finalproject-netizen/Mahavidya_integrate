@@ -208,3 +208,97 @@ button:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }
+/* === ANIMASI MASUK UMUM === */
+.dashboard-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.dashboard-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === VARIASI ARAH ANIMASI === */
+.fade-left { transform: translateX(-60px); }
+.fade-right { transform: translateX(60px); }
+.fade-up { transform: translateY(60px); }
+.fade-center { transform: scale(0.95); }
+
+.fade-left.visible,
+.fade-right.visible,
+.fade-up.visible,
+.fade-center.visible {
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* === ICON ANIMASI KHUSUS === */
+.dashboard-section .icon {
+  opacity: 0;
+  transition: all 1s ease;
+}
+.dashboard-section.visible .icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* === MODAL KEMITRAAN === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  border: 5px solid #450000;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  animation: popIn 0.6s ease forwards;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 400px;
+  margin: 1rem 0;
+  border: none;
+}
+
+.modal-content button {
+  background-color: #450000;
+  border: 5px solid #450000;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #2A0001;
+  border-color: #2A0001;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
