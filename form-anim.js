@@ -7,9 +7,7 @@ form.addEventListener('submit', (e) => {
 
   emailjs.sendForm('service_mahavidya', 'template_kemitraan', form)
     .then(() => {
-      // animasi keluar form
       form.classList.add('fade-out');
-
       setTimeout(() => {
         form.style.display = 'none';
         success.classList.add('visible');
