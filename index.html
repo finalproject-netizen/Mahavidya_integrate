@@ -1,122 +1,120 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahavidya Dashboard</title>
-
-  <!-- Fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Mahavidya</title>
+    <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-
-  <!-- === SECTION 1: JUDUL === -->
-  <section class="dashboard-section section-1">
-    <img src="assets/icons/title-icon.png" alt="Judul Icon" class="icon background-icon">
-    <header>
-      <h1>Mahavidya</h1>
-      <h2>Platform Eksperimen dan Inovasi Digital</h2>
-      <a href="#kemitraan" class="btn">Mulai Jelajah</a>
-    </header>
+  <!-- Section 1: Judul -->
+  <section id="section1" class="section fade-in">
+    <div class="section-content center">
+      <div class="icon-bg">
+        <img src="assets/icons/title-icon.png" alt="Thaha Mahavidya">
+      </div>
+      <h1>Thaha Mahavidya</h1>
+    </div>
   </section>
 
-  <!-- === SECTION 2: KEMITRAAN === -->
-  <section class="dashboard-section section-2" id="kemitraan">
-    <div class="content">
-      <img src="assets/icons/kemitraan-icon.png" alt="Kemitraan Icon" class="icon">
+  <!-- Section 2: Kemitraan -->
+  <section id="section2" class="section fade-in slide-left">
+    <div class="section-content">
+      <img src="assets/icons/kemitraan-icon.png" class="icon-inline" alt="Kemitraan">
       <div>
         <h2>Kemitraan</h2>
-        <p>
-          Kolaborasi dengan lembaga dan individu untuk menciptakan ekosistem pengetahuan terbuka.
-          Pelajari lebih lanjut tentang perjanjian dan syarat kemitraan kami.
-        </p>
-        <button class="btn" id="openKemitraanPopup">Lihat Detail & Daftar</button>
+        <p>Melalui kemitraan ini, sekolah mendapat akses pada teknologi terkini, sumber daya digital, serta dukungan pengembangan agar generasi muda siap menghadapi transformasi pendidikan.r</p>
+        <button class="btn" id="openKemitraan">Lihat Detail</button>
       </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Database -->
+  <section id="section3" class="section fade-in">
+    <div class="section-content center">
+      <h2>Database</h2>
+      <img src="assets/icons/database-icon.png" class="icon-middle" alt="Database">
+      <p>Perusahaan menyediakan, memperbarui, serta menyesuaikan perangkat pembelajaran digital yang dirancang khusus untuk mendukung proses belajar-mengajar di sekolah</p>
+      <a href="database.html" class="btn">Masuk</a>
+    </div>
+  </section>
+
+  <!-- Section 4: Ekosistem -->
+  <section id="section4" class="section fade-in">
+    <div class="section-content">
+      <h2>Ekosistem</h2>
+      <p>Menghimpun para partner yang memiliki visi sama dalam memajukan pendidikan.</p>
+      <img src="assets/icons/ekosistem-icon.png" class="icon-after" alt="Ekosistem">
+      <a href="komunitas.html" class="btn">Masuk Komunitas</a>
+    </div>
+  </section>
+
+  <!-- Section 5: Motaverse -->
+  <section id="section5" class="section fade-in slide-left">
+    <div class="section-content">
+      <img src="assets/icons/motaverse-icon.png" class="icon-inline" alt="Motaverse">
+      <div>
+        <h2>Motaverse</h2>
+        <p>Ruang komunitas yang disediakan oleh Mahavidya untuk bercerita, bertukar pikiran, dan berbagi pengalaman seputar pendidikan. Setiap tulisan yang terverifikasi akan mendapatkan apresiasi berupa hasil yang sepadan, sebagai penghargaan atas kontribusi penulis terhadap ekosistem pendidikan.</p>
+        <a href="motaverse.hmtl" class="btn">Menjadi Motaver</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Eksperimen -->
+  <section id="section6" class="section fade-in slide-right">
+    <div class="section-content">
+      <div>
+        <h2>Eksperimen</h2>
+        <p>Ruang terbuka bagi siapa saja yang ingin menguji dan mengembangkan ide-ide pendidikan.</p>
+        <a href="eksperimen.html" class="btn">Menjadi Eksperimentor</a>
+      </div>
+      <img src="assets/icons/eksperimen-icon.png" class="icon-inline" alt="Eksperimen">
+    </div>
+  </section>
+
+  <!-- Section 7: Prototype -->
+  <section id="section7" class="section fade-in">
+    <div class="section-content center">
+      <img src="assets/icons/prototype-icon.png" class="icon-before" alt="Prototype">
+      <h2>Prototype</h2>
+      <p>Ruang khusus yang disediakan Mahavidya untuk menampilkan, mendokumentasikan, dan melindungi hasil inovasi pendidikan yang lahir dari aset masa depan ekosistem pendidikan.</p>
+      <a href="prototype.html" class="btn">Menjadi Prototyper</a>
+    </div>
+  </section>
+
+  <!-- Section 8: Dukungan dan Whitepaper -->
+  <section id="section8" class="section fade-in">
+    <div class="section-content center">
+      <h2>Dukungan & Whitepaper</h2>
+      <img src="assets/icons/whitepaper-icon.png" class="icon-middle" alt="Whitepaper">
+      <p>Berikut Whitepaper yang menjelaskan mekanisme alokasi sumber daya serta profil pengembangan Mahavidya dalam mewujudkan ekosistem pendidikan era masyarakat baru.</p>
+      <a href="assets/docs/whitepaper.pdf" target="_blank" class="btn">Baca Whitepaper</a>
+    </div>
+  </section>
+
+  <!-- Section 9: Mahavidya -->
+  <section id="section9" class="section fade-in slide-right">
+    <div class="section-content">
+      <div>
+        <h2>Mahavidya</h2>
+        <p>Hadir sebagai respon atas kebutuhan masyarakat baru,</p>
+      </div>
+      <img src="assets/icons/mahavidya-icon.png" class="icon-inline" alt="Mahavidya">
     </div>
   </section>
 
   <!-- Popup Kemitraan -->
   <div id="kemitraanPopup" class="popup">
     <div class="popup-content">
-      <span class="close-btn">&times;</span>
-      <h2>Perjanjian & Persetujuan Kemitraan</h2>
-      <iframe src="assets/docs/perjanjian.pdf" frameborder="0"></iframe>
-      <a href="kemitraan-form.html" class="btn">Daftar Sekarang</a>
+      <span class="close">&times;</span>
+      <h2>Perjanjian dan Persetujuan Kemitraan</h2>
+      <iframe src="assets/docs/perjanjian.pdf" width="100%" height="400px"></iframe>
+      <a href="kemitraan.html" class="btn">Daftar Sekarang</a>
     </div>
   </div>
-
-  <!-- === SECTION 3: DATABASE === -->
-  <section class="dashboard-section section-3">
-    <h2>Database</h2>
-    <img src="assets/icons/database-icon.png" alt="Database Icon" class="icon">
-    <p>Kumpulan data dan riset yang menjadi dasar pengembangan inovasi Mahavidya.</p>
-    <a href="database.html" class="btn">Lihat Database</a>
-  </section>
-
-  <!-- === SECTION 4: EKOSISTEM === -->
-  <section class="dashboard-section section-4">
-    <h2>Ekosistem</h2>
-    <p>Jaringan lembaga, akademisi, dan komunitas digital yang saling terhubung untuk kolaborasi.</p>
-    <img src="assets/icons/ekosistem-icon.png" alt="Ekosistem Icon" class="icon">
-    <a href="komunitas.html" class="btn">Masuk Komunitas</a>
-  </section>
-
-  <!-- === SECTION 5: MOTAVERSE === -->
-  <section class="dashboard-section section-5">
-    <div class="content">
-      <img src="assets/icons/motaverse-icon.png" alt="Motaverse Icon" class="icon">
-      <div>
-        <h2>Motaverse</h2>
-        <p>Ruang metaverse interaktif untuk simulasi pembelajaran, eksperimen sosial, dan pelatihan digital.</p>
-        <a href="motaverse.html" class="btn">Masuk Motaverse</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- === SECTION 6: EKSPERIMEN === -->
-  <section class="dashboard-section section-6">
-    <div class="content">
-      <div>
-        <h2>Eksperimen</h2>
-        <p>Wadah pengujian konsep digital, algoritma, dan desain berbasis teknologi terbuka.</p>
-        <a href="eksperimen.html" class="btn">Lihat Eksperimen</a>
-      </div>
-      <img src="assets/icons/eksperimen-icon.png" alt="Eksperimen Icon" class="icon">
-    </div>
-  </section>
-
-  <!-- === SECTION 7: PROTOTYPE === -->
-  <section class="dashboard-section section-7">
-    <img src="assets/icons/prototype-icon.png" alt="Prototype Icon" class="icon">
-    <h2>Prototype</h2>
-    <p>Pengembangan purwarupa aplikasi dan sistem yang siap diuji lapangan.</p>
-    <a href="prototype.html" class="btn">Lihat Prototype</a>
-  </section>
-
-  <!-- === SECTION 8: DUKUNGAN & WHITEPAPER === -->
-  <section class="dashboard-section section-8">
-    <h2>Dukungan & Whitepaper</h2>
-    <img src="assets/icons/whitepaper-icon.png" alt="Whitepaper Icon" class="icon">
-    <p>Temukan panduan, dokumen pendukung, dan roadmap Mahavidya.</p>
-    <a href="assets/docs/whitepaper.pdf" class="btn" target="_blank">Buka Whitepaper</a>
-  </section>
-
-  <!-- === SECTION 9: MAHAVIDYA === -->
-  <section class="dashboard-section section-9">
-    <div class="content">
-      <div>
-        <h2>Mahavidya</h2>
-        <p>Pusat inovasi digital dan kolaborasi teknologi yang membentuk masa depan pembelajaran.</p>
-        <a href="tentang.html" class="btn">Tentang Mahavidya</a>
-      </div>
-      <img src="assets/icons/mahavidya-icon.png" alt="Mahavidya Icon" class="icon">
-    </div>
-  </section>
-
-  <!-- Script -->
-  <script src="script.js"></script>
 </body>
 </html>
