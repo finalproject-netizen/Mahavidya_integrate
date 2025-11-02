@@ -9,41 +9,49 @@
 <body>
 
   <!-- SECTION 1: Judul -->
-  <section id="section1" class="dashboard-section icon-behind">
+  <section id="section1" class="dashboard-section icon-behind fade-center">
     <img src="assets/icons/icon-judul.svg" alt="Icon Judul" class="icon-bg">
     <h1>Thaha, Mahavidya</h1>
   </section>
 
   <!-- SECTION 2: Kemitraan -->
-  <section id="section2" class="dashboard-section icon-left">
+  <section id="section2" class="dashboard-section icon-left fade-left">
     <div class="icon-text-row">
       <img src="assets/icons/icon-kemitraan.svg" alt="Icon Kemitraan" class="icon">
       <div>
         <h2>Kemitraan</h2>
         <p>sit dolor amer</p>
-        <button onclick="window.location.href='form.html'">Lihat Kemitraan</button>
+        <button id="openModal">Lihat Kemitraan</button>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: Database -->
-  <section id="section3" class="dashboard-section icon-middle">
+  <!-- Modal PDF Kemitraan -->
+  <div id="kemitraanModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Perjanjian & Persetujuan Kemitraan</h3>
+      <iframe src="assets/docs/kemitraan.pdf" title="PDF Kemitraan"></iframe>
+      <button onclick="window.location.href='form.html'">Daftar Sekarang</button>
+    </div>
+  </div>
+
+  <!-- SECTION 3–9 -->
+  <section id="section3" class="dashboard-section icon-middle fade-up">
     <h2>Database</h2>
     <img src="assets/icons/icon-database.svg" alt="Icon Database" class="icon">
     <p>sit dolor amer</p>
     <button onclick="window.location.href='database.html'">Lihat Database</button>
   </section>
 
-  <!-- SECTION 4: Ekosistem -->
-  <section id="section4" class="dashboard-section icon-after">
+  <section id="section4" class="dashboard-section icon-after fade-up">
     <h2>Ekosistem</h2>
     <p>sit dolor amer</p>
     <img src="assets/icons/icon-ekosistem.svg" alt="Icon Ekosistem" class="icon">
     <button onclick="window.location.href='komunitas.html'">Lihat Ekosistem</button>
   </section>
 
-  <!-- SECTION 5: Motaverse -->
-  <section id="section5" class="dashboard-section icon-left">
+  <section id="section5" class="dashboard-section icon-left fade-left">
     <div class="icon-text-row">
       <img src="assets/icons/icon-motaverse.svg" alt="Icon Motaverse" class="icon">
       <div>
@@ -54,8 +62,7 @@
     </div>
   </section>
 
-  <!-- SECTION 6: Eksperimen -->
-  <section id="section6" class="dashboard-section icon-right">
+  <section id="section6" class="dashboard-section icon-right fade-right">
     <div class="icon-text-row">
       <div>
         <h2>Eksperimen</h2>
@@ -66,24 +73,21 @@
     </div>
   </section>
 
-  <!-- SECTION 7: Prototype -->
-  <section id="section7" class="dashboard-section icon-before">
+  <section id="section7" class="dashboard-section icon-before fade-up">
     <h2>Prototype</h2>
     <img src="assets/icons/icon-prototype.svg" alt="Icon Prototype" class="icon">
     <p>sit dolor amer</p>
     <button onclick="window.location.href='prototype.html'">Lihat Prototype</button>
   </section>
 
-  <!-- SECTION 8: Dukungan & Whitepaper -->
-  <section id="section8" class="dashboard-section icon-middle">
+  <section id="section8" class="dashboard-section icon-middle fade-up">
     <h2>Dukungan & Whitepaper</h2>
     <img src="assets/icons/icon-dukungan.svg" alt="Icon Dukungan" class="icon">
     <p>sit dolor amer</p>
     <button onclick="window.location.href='whitepaper.html'">Lihat Detail</button>
   </section>
 
-  <!-- SECTION 9: Mahavidya -->
-  <section id="section9" class="dashboard-section icon-right">
+  <section id="section9" class="dashboard-section icon-right fade-right">
     <div class="icon-text-row">
       <div>
         <h2>Mahavidya</h2>
@@ -94,5 +98,6 @@
     </div>
   </section>
 
+  <script src="script.js"></script>
 </body>
 </html>
